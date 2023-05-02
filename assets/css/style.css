@@ -1,5 +1,13 @@
 body{
-    background-image: url(/assets/img/crudbg.jpg);
+    background-image: url(/assets/img/crud-bg.jpg);
     background-size:cover;
+    background-repeat: no-repeat;
     background-position:center;
+}
+
+.box{
+    margin: 30px;
+    justify-content: center;
+    align-items: center;
+    
 }

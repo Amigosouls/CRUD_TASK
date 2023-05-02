@@ -19,13 +19,13 @@
 
 <body>
     <!--Navbar-->
-    <nav class="navbar  bg-dark bg-transparent" data-bs-theme="dark">
+    <nav class="navbar navbar-expand-lg bg-dark bg-transparent " data-bs-theme="dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
-                <img src="/assets/img/logo.png" alt="Logo" width="80" height="40"
-                    class="d-inline-block align-text-top">
+                <img src="/assets/img/logo.png" alt="Logo" width="80" height="40" class="d-inline-block align-text-top">
                 Dummy
             </a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent"></div>
             <ul class="navbar-nav  ms-auto align-self-end">
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="#">HOME</a>
@@ -34,9 +34,31 @@
                     <a class="nav-link active" href="#">PLANS</a>
                 </li>
             </ul>
-            
+        </div>
         </div>
     </nav>
+    <!--Table -->
+    <div class="box">
+        <table class="table table-striped table-dark">
+            <thead>
+                <tr>
+                    <th scope="col">Product Number</th>
+                    <th scope="col">Computer Type</th>
+                    <th scope="col">Processor</th>
+                    <th scope="col">RAM</th>
+                    <th scope="col">Monitor Size</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Computer Image</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="tabledata">
+
+            </tbody>
+        </table>
+    </div>
+<script src="assets/js/index.js"></script>
 
 </body>
 
