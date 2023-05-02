@@ -1,94 +1,94 @@
 {
-    "Computer": [
-        {
-            "prod_id":"1",
-            "computertype": "Laptop",
-            "processor": "Intel Core i5",
-            "RAM": "8 GB",
-            "monitor_size": "14 inches",
-            "price": "$900",
-            "CompImage": "https://example.com/laptop-image.jpg"
-        },
-        {
-            "prod_id":"2",
-            "computertype": "Gaming PC",
-            "processor": "AMD Ryzen 9 5900X",
-            "RAM": "32 GB",
-            "monitor_size": "32 inches",
-            "price": "$3,000",
-            "CompImage": "https://example.com/gaming-pc-image.jpg"
-        },
-        {
-            "prod_id":"3",
-            "computertype": "Desktop",
-            "processor": "Intel Core i3",
-            "RAM": "4 GB",
-            "monitor_size": "21.5 inches",
-            "price": "$450",
-            "CompImage": "https://example.com/basic-desktop.jpg"
-        },
-        {
-            "prod_id":"4",
-            "computertype": "Desktop",
-            "processor": "AMD Ryzen 9 5950X",
-            "RAM": "64 GB",
-            "monitor_size": "34 inches",
-            "price": "$5,000",
-            "CompImage": "https://example.com/high-end-desktop.jpg"
-        },
-        {
-            "prod_id":"5",
-            "computertype": "Laptop",
-            "processor": "Intel Core i7",
-            "RAM": "16 GB",
-            "monitor_size": "13 inches",
-            "price": "$1,200",
-            "CompImage": "https://example.com/lightweight-laptop.jpg"
-        },
-        {
-            "prod_id":"6",
-            "computertype": "Laptop",
-            "processor": "Intel Xeon E-2286M",
-            "RAM": "32 GB",
-            "monitor_size": "15.6 inches",
-            "price": "$2,500",
-            "CompImage": "https://example.com/workstation-laptop.jpg"
-        },
-        {
-            "prod_id":"7",
-            "computertype": "All-in-One PC",
-            "processor": "Intel Core i5",
-            "RAM": "8 GB",
-            "monitor_size": "23.8 inches",
-            "price": "$800",
-            "CompImage": "https://example.com/all-in-one-pc.jpg"
-        },
-        {
-            "prod_id":"8",
-            "computertype": "Laptop",
-            "processor": "AMD Ryzen 7",
-            "RAM": "16 GB",
-            "monitor_size": "15.6 inches",
-            "price": "$1,500",
-            "CompImage": "https://example.com/gaming-laptop.jpg"
-        },
-        {
-            "prod_id":"9",
-            "computertype": "Mini PC",
-            "processor": "Intel Core i5",
-            "RAM": "8 GB",
-            "monitor_size": "N/A",
-            "price": "$600",
-            "CompImage": "https://example.com/mini-pc.jpg"
-        },
-        {
-            "prod_id":"10",
-            "computertype": "Home Theater PC",
-            "processor": "Intel Core i3",
-            "RAM": "4 GB",
-            "monitor_size": "N/A",
-            "price": "$400",
-            "CompImage": "https://example.com/home-theater-pc.jpg"
-        }
-    ]
+  "Computer": [
+    {
+      "computertype": "Lap",
+      "processor": "Intel Core i5",
+      "RAM": "8 GB",
+      "monitor_size": "14 inches",
+      "price": "$900",
+      "CompImage": "No link Provided",
+      "id": 1
+    },
+    {
+      "computertype": "Gaming PC",
+      "processor": "AMD Ryzen 9 5900X",
+      "RAM": "32 GB",
+      "monitor_size": "32 inches",
+      "price": "$3,000",
+      "CompImage": "No link Provided",
+      "id": 2
+    },
+    {
+      "id": 3,
+      "computertype": "Desktop",
+      "processor": "Intel Core i3",
+      "RAM": "4 GB",
+      "monitor_size": "21.5 inches",
+      "price": "$450",
+      "CompImage": "https://example.com/basic-desktop.jpg"
+    },
+    {
+      "id": 4,
+      "computertype": "Desktop",
+      "processor": "AMD Ryzen 9 5950X",
+      "RAM": "64 GB",
+      "monitor_size": "34 inches",
+      "price": "$5,000",
+      "CompImage": "https://example.com/high-end-desktop.jpg"
+    },
+    {
+      "id": 5,
+      "computertype": "Laptop",
+      "processor": "Intel Core i7",
+      "RAM": "16 GB",
+      "monitor_size": "13 inches",
+      "price": "$1,200",
+      "CompImage": "https://example.com/lightweight-laptop.jpg"
+    },
+    {
+      "id": 6,
+      "computertype": "Laptop",
+      "processor": "Intel Xeon E-2286M",
+      "RAM": "32 GB",
+      "monitor_size": "15.6 inches",
+      "price": "$2,500",
+      "CompImage": "https://example.com/workstation-laptop.jpg"
+    },
+    {
+      "id": 7,
+      "computertype": "All-in-One PC",
+      "processor": "Intel Core i5",
+      "RAM": "8 GB",
+      "monitor_size": "23.8 inches",
+      "price": "$800",
+      "CompImage": "https://example.com/all-in-one-pc.jpg"
+    },
+    {
+      "id": 8,
+      "computertype": "Laptop",
+      "processor": "AMD Ryzen 7",
+      "RAM": "16 GB",
+      "monitor_size": "15.6 inches",
+      "price": "$1,500",
+      "CompImage": "https://example.com/gaming-laptop.jpg"
+    },
+    {
+      "id": 9,
+      "computertype": "Mini PC",
+      "processor": "Intel Core i5",
+      "RAM": "8 GB",
+      "monitor_size": "N/A",
+      "price": "$600",
+      "CompImage": "https://example.com/mini-pc.jpg"
+    },
+    {
+      "id": 10,
+      "computertype": "Home Theater PC",
+      "processor": "Intel Core i3",
+      "RAM": "4 GB",
+      "monitor_size": "N/A",
+      "price": "$400",
+      "CompImage": "https://example.com/home-theater-pc.jpg"
+    }
+  ]
 }
