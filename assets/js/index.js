@@ -140,7 +140,7 @@ function addProduct(){
 }
 
 
-deleteData(pro_id){
+function deleteData(pro_id){
     const xmlParser = new XMLHttpRequest();
     xmlParser.open("DELETE",`http://localhost:3000/Computer/${pro_id}`);
     xmlParser.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
