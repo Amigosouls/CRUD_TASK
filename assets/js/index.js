@@ -1,3 +1,4 @@
+
 function showTable(){
     const xmlParser = new XMLHttpRequest();
     xmlParser.open("GET","http://localhost:3000/Computer");
@@ -17,11 +18,14 @@ function showTable(){
                 data +="<td>"+values["RAM"]+"</td>";
                 data +="<td>"+values["monitor_size"]+"</td>";
                 data +="<td>"+values["price"]+"</td>";
-                data +="<td>"+values["CompImage"]+"</td>";
-                data +='<td> <button type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#staticBackdrop1" onClick="showEdit('+values["id"]+')">Edit</button>';
-                data +='<td> <button type="button" class="btn btn-primary" onClick="deleteData('+values["id"]+')">Del</button>';
+                data+=
+                '<td><img width="50px" src=https://pixabay.com/photos/' +
+                values["CompImage"] +' class="avatar" cross-origin=""></td>';
+                data +='<td> <button type="button" class="btn btn-warning"  data-bs-toggle="modal" data-bs-target="#editModel" onClick="showEdit('+values["id"]+')">Edit</button>';
+                data +=`<td> <button type="button" class="btn btn-danger" onClick="alert(${values["id"]},'You are deleting the product with ID')">Del</button>`;
                 data +="</td>"
             }
+            console.log(data);
             document.getElementById("tabledata").innerHTML=data;
         }
     }
@@ -29,12 +33,10 @@ function showTable(){
 showTable()
 
 function showEdit(prod_id){
-    //document.getElementById("mod_title").innerText="Edit"
     const xmlParser = new XMLHttpRequest();
     xmlParser.open("GET",`http://localhost:3000/Computer/${prod_id}`);
     xmlParser.send();
     xmlParser.onreadystatechange = function(){
-       // document.getElementById("staticBackdropLabel").value = "Edit"
         if(this.status = 200 && this.readyState==4)
         {
             const currentProduct = JSON.parse(this.responseText);
@@ -78,27 +80,15 @@ function editComputer(pro_id){
     xmlParser.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
           const objects = JSON.parse(this.responseText);
+          
           showTable();
         }
     }
+  
 }
 
 
 //alert button
-
-const alertPlaceholder = document.getElementById('liveAlertPlaceholder')
-const appendAlert = (message, type) => {
-  const wrapper = document.createElement('div')
-  wrapper.innerHTML = [
-    `<div class="alert alert-${type} alert-dismissible" role="alert">`,
-    `   <div>${message}</div>`,
-    '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
-    '</div>'
-  ].join('')
-
-  alertPlaceholder.append(wrapper)
-}
-
 
 
 //Add new 
@@ -127,15 +117,8 @@ function addProduct(){
     xmlParser.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
           const products = JSON.parse(this.responseText);
-          const alertTrigger = document.getElementById('liveAlertBtn')
-        if (alertTrigger) {
-        alertTrigger.addEventListener('click', () => {
-        appendAlert('Nice, you triggered this alert message!', 'success');
-    
-        })
         }
-          loadTable();
-        }
+        showTable();
       };
 }
 
@@ -147,9 +130,37 @@ function deleteData(pro_id){
     xmlParser.send(
         JSON.stringify(
            { 
-
+            id :pro_id
 
            })
     )
-        
+    xmlParser.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          const products = JSON.parse(this.responseText);
+        }
+        showTable();
+      };
 }
+
+
+//alerts
+const alertPlaceholder = document.getElementById('liveAlertPlaceholder')
+
+const alert = (id,msg) => {
+  const wrapper = document.createElement('div')
+  wrapper.innerHTML = [
+    `<div class="alert alert-danger alert-dismissible" role="alert">`,
+    `<h3>${msg}</h3>`,`   <div><h3>${id}</h3></div>`,
+    `  <button type="button" class="btn btn-danger form-btn" data-bs-dismiss="alert" aria-label="Close" onclick="deleteData(${id})">Okey</button>`,`<button type="button" class="btn btn-danger form-btn" data-bs-dismiss="alert" aria-label="Close">Cancel</button>`,
+    '</div>'
+  ].join('')
+
+  alertPlaceholder.append(wrapper)
+}
+
+// var alertTrigger = document.getElementById("alertbtn");
+//     if(alertTrigger){
+//         alertTrigger.addEventListener('click', () => {
+//             alert('Nice, you triggered this alert message!', 'success')
+//           })
+//     }
