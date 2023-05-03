@@ -159,3 +159,26 @@ const alert = (id,msg) => {
   alertPlaceholder.append(wrapper)
 }
 
+
+//validations
+
+$(document).ready(function(){
+    $("#ctype").validate({
+        rules:{
+            ctype:{
+                required:true
+            },
+            processor:{
+                required:true
+            }
+        },
+        messages:{
+            ctype:{
+                required:"This is Required Field"
+            },
+            processor:{
+                required:"T"
+            }
+        }
+    })
+})
