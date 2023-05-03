@@ -1,10 +1,10 @@
 {
   "Computer": [
     {
-      "computertype": "Lap",
+      "computertype": "Laptop",
       "processor": "Intel Core i5",
-      "RAM": "8 GB",
-      "monitor_size": "14 inches",
+      "RAM": "4 GB",
+      "monitor_size": "13 inches",
       "price": "$900",
       "CompImage": "No link Provided",
       "id": 1
@@ -13,28 +13,28 @@
       "computertype": "Gaming PC",
       "processor": "AMD Ryzen 9 5900X",
       "RAM": "32 GB",
-      "monitor_size": "32 inches",
+      "monitor_size": "31 inches",
       "price": "$3,000",
       "CompImage": "No link Provided",
       "id": 2
     },
     {
-      "id": 3,
       "computertype": "Desktop",
       "processor": "Intel Core i3",
       "RAM": "4 GB",
-      "monitor_size": "21.5 inches",
+      "monitor_size": "21.7 inches",
       "price": "$450",
-      "CompImage": "https://example.com/basic-desktop.jpg"
+      "CompImage": "No link Provided",
+      "id": 3
     },
     {
-      "id": 4,
-      "computertype": "Desktop",
+      "computertype": "Gaming",
       "processor": "AMD Ryzen 9 5950X",
       "RAM": "64 GB",
       "monitor_size": "34 inches",
       "price": "$5,000",
-      "CompImage": "https://example.com/high-end-desktop.jpg"
+      "CompImage": "No link Provided",
+      "id": 4
     },
     {
       "id": 5,
@@ -89,6 +89,60 @@
       "monitor_size": "N/A",
       "price": "$400",
       "CompImage": "https://example.com/home-theater-pc.jpg"
+    },
+    {
+      "computertype": "Laptop",
+      "processor": "Intel Core i5",
+      "RAM": "4 GB",
+      "monitor_size": "13 inches",
+      "price": "$900",
+      "CompImage": "No link Provided",
+      "id": 11
+    },
+    {
+      "computertype": "Laptop",
+      "processor": "Intel Core i5",
+      "RAM": "4 GB",
+      "monitor_size": "13 inches",
+      "price": "$900",
+      "CompImage": "No link Provided",
+      "id": 12
+    },
+    {
+      "computertype": "",
+      "processor": "",
+      "RAM": "",
+      "monitor_size": "",
+      "price": "",
+      "CompImage": "No link Provided",
+      "id": 13
+    },
+    {
+      "computertype": "",
+      "processor": "",
+      "RAM": "",
+      "monitor_size": "",
+      "price": "",
+      "CompImage": "No link Provided",
+      "id": 14
+    },
+    {
+      "computertype": "",
+      "processor": "",
+      "RAM": "",
+      "monitor_size": "",
+      "price": "",
+      "CompImage": "No link Provided",
+      "id": 15
+    },
+    {
+      "computertype": "Desktop",
+      "processor": "Intel Core",
+      "RAM": "2 GB",
+      "monitor_size": "14 inch",
+      "price": "$ 600",
+      "CompImage": "No link Provided",
+      "id": 16
     }
   ]
 }

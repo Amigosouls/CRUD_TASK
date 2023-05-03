@@ -19,6 +19,7 @@
 
 <body>
     <!--Navbar-->
+    
     <nav class="navbar navbar-expand-lg bg-dark bg-transparent " data-bs-theme="dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
@@ -27,17 +28,13 @@
             </a>
             <div class="collapse navbar-collapse" id="navbarSupportedContent"></div>
             <ul class="navbar-nav  ms-auto align-self-end">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">HOME</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="#">PLANS</a>
-                </li>
+                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop2">Create</button>
             </ul>
-        </div>
+        </div> 
         </div>
     </nav>
     <!--Table -->
+    <div id="liveAlertPlaceholder"></div>
     <div class="box">
         <table class="table table-striped  bg-transparent" data-bs-theme="dark">
             <thead>
@@ -59,53 +56,89 @@
         </table>
 
     <!-- Modal Edit Computer-->
-    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    <div class="modal fade modal_edit" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
         aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Edit</h1>
+                    <h1 class="modal-title fs-5" id="mod_title">Edit</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <input type="text" disabled="true" hidden="true" id="pro_id">
-                    <div class="form-floating">
-                        <input type="text" class="form-control" id="ctype" placeholder="Password">
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="ctype" placeholder="Computer Type">
                         <label for="floatingPassword">Computer Type</label>
                     </div>
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="processor" placeholder="name@example.com">
+                        <input type="text" class="form-control" id="processor" placeholder="Processor">
                         <label for="floatingInput">Processor</label>
                     </div>
-                    <div class="form-floating">
-                        <input type="text" class="form-control" id="ram" placeholder="Password">
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="ram" placeholder="RAM">
                         <label for="floatingPassword">RAM</label>
                     </div>
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="mon_size" placeholder="name@example.com">
+                        <input type="text" class="form-control" id="mon_size" placeholder="Monitor Size">
                         <label for="floatingInput">Monitor Size</label>
                     </div>
-                    <div class="form-floating">
-                        <input type="text" class="form-control" id="pri" placeholder="">
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="pri" placeholder="Price">
                         <label for="floatingPassword">Price</label>
                     </div>
                   
                 </div>
-                <div id="liveAlertPlaceholder"></div>
+               
                 <div class="modal-footer">
 
-                    <button type="button" class="btn btn-primary" id="liveAlertBtn" onclick="editComputer(pro_id.value)">Edit</button>
+                    <button type="button" class="btn btn-primary" id="liveAlertBtn" onclick="editComputer(pro_id.value)" data-bs-dismiss="modal">Edit</button>
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
     </div>
+    
+    <div class="modal_create fade modal" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="mod_title2">Create</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="c_comtype" placeholder="Computer Type" value="">
+                    <label for="floatingPassword">Computer Type</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="c_processor" placeholder="Processor" value="">
+                    <label for="floatingInput">Processor</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="c_ram" placeholder="RAM" value="">
+                    <label for="floatingPassword">RAM</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="c_mon_size" placeholder="Monitor Size" value="">
+                    <label for="floatingInput">Monitor Size</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="c_pri" placeholder="Price" value="">
+                    <label for="floatingPassword">Price</label>
+                </div>
+              
+            </div>
+           
+            <div class="modal-footer">
 
-    
-    <button type="button" class="btn btn-primary" id="liveAlertBtn">Show live alert</button>
-    
-    
-    
+                <button type="button" class="btn btn-primary" id="liveAlertBtn" onclick="addProduct()" data-bs-dismiss="modal">Create</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
     <script src="assets/js/index.js"></script>
 
 </body>
