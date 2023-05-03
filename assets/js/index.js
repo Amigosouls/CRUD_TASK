@@ -1,4 +1,5 @@
 
+
 function showTable(){
     const xmlParser = new XMLHttpRequest();
     xmlParser.open("GET","http://localhost:3000/Computer");
@@ -18,9 +19,9 @@ function showTable(){
                 data +="<td>"+values["RAM"]+"</td>";
                 data +="<td>"+values["monitor_size"]+"</td>";
                 data +="<td>"+values["price"]+"</td>";
-                data+=
-                '<td><img width="50px" src=https://pixabay.com/photos/' +
-                values["CompImage"] +' class="avatar" cross-origin=""></td>';
+               data+=
+                '<td><img width="50px" id ="" height="60px" src=https://pixabay.com/get/' +
+                values["CompImage"] +' class="" cross-origin=""></td>';
                 data +='<td> <button type="button" class="btn btn-warning"  data-bs-toggle="modal" data-bs-target="#editModel" onClick="showEdit('+values["id"]+')">Edit</button>';
                 data +=`<td> <button type="button" class="btn btn-danger" onClick="alert(${values["id"]},'You are deleting the product with ID')">Del</button>`;
                 data +="</td>"
@@ -158,9 +159,3 @@ const alert = (id,msg) => {
   alertPlaceholder.append(wrapper)
 }
 
-// var alertTrigger = document.getElementById("alertbtn");
-//     if(alertTrigger){
-//         alertTrigger.addEventListener('click', () => {
-//             alert('Nice, you triggered this alert message!', 'success')
-//           })
-//     }
