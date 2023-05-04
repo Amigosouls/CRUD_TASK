@@ -1,15 +1,6 @@
 {
   "Computer": [
     {
-      "computertype": "xxqx",
-      "processor": "rgrege",
-      "RAM": "4 GB",
-      "monitor_size": "13 inches",
-      "price": "",
-      "CompImage": "1868496",
-      "id": 1
-    },
-    {
       "computertype": "Gaming PC",
       "processor": "AMD Ryzen 9 5900X",
       "RAM": "32 GB",
@@ -73,11 +64,11 @@
       "CompImage": "https://example.com/gaming-laptop.jpg"
     },
     {
-      "computertype": "Mini PC",
-      "processor": "Intel Core i5",
-      "RAM": "16 GB",
-      "monitor_size": "N/A",
-      "price": "$600",
+      "computertype": "Laptop",
+      "processor": "AMD A4",
+      "RAM": "4 gb",
+      "monitor_size": "14 inch",
+      "price": "$1000",
       "CompImage": "No link Provided",
       "id": 9
     }

@@ -42,7 +42,7 @@ function showTable() {
                     '<td class="avatar"></td>';
                     getImage(values["CompImage"]);
                 data += '<td> <button type="button" class="btn btn-warning"  data-bs-toggle="modal" data-bs-target="#editModel" onClick="showEdit(' + values["id"] + ')">Edit</button>';
-                data += `<td> <button type="button" class="btn btn-danger" onClick="alert(${values["id"]},'You are deleting the product with ID')">Del</button>`;
+                data += `<td> <button type="button" class="btn btn-danger" onClick="alert(${values["id"]},'You are deleting the product with ID')">Del<span><i class="fa-thin fa-trash-can fa-xl" style="color: #051fe6;"></i></span></button>`;
                 data += "</td>"
             }
             console.log(data);
@@ -314,5 +314,3 @@ function getImage(img){
     
     })
 }
-
-getImage()
