@@ -19,8 +19,10 @@
         })
 })()
 
+//funcion to show data to the table
 function showTable() {
     const xmlParser = new XMLHttpRequest();
+    var imgcount =1;
     xmlParser.open("GET", "http://localhost:3000/Computer");
     xmlParser.send();
     console.log(this.readyState);
@@ -39,11 +41,12 @@ function showTable() {
                 data += "<td>" + values["monitor_size"] + "</td>";
                 data += "<td>" + values["price"] + "</td>";
                 data +=
-                    '<td class="avatar"></td>';
-                    getImage(values["CompImage"]);
-                data += '<td> <button type="button" class="btn btn-warning"  data-bs-toggle="modal" data-bs-target="#editModel" onClick="showEdit(' + values["id"] + ')">Edit</button>';
-                data += `<td> <button type="button" class="btn btn-danger" onClick="alert(${values["id"]},'You are deleting the product with ID')">Del<span><i class="fa-thin fa-trash-can fa-xl" style="color: #051fe6;"></i></span></button>`;
+                    '<td class="avatar'+imgcount+' tdimg"></td>';
+                    getImage(values["CompImage"],imgcount);
+                data += '<td> <button type="button" class="btn btn-warning"  data-bs-toggle="modal" data-bs-target="#editModel" onClick="showEdit(' + values["id"] + ')"><ion-icon name="create-outline"></ion-icon></button>';
+                data += `<td> <button type="button" class="btn btn-danger" onClick="alert(${values["id"]},'You are deleting the product with ID')"><ion-icon name="trash-outline"></ion-icon></button>`;
                 data += "</td>"
+                imgcount+=1
             }
             console.log(data);
             document.getElementById("tabledata").innerHTML = data;
@@ -51,6 +54,8 @@ function showTable() {
     }
 }
 showTable()
+
+//function to fetch product with specific id
 
 function showEdit(prod_id) {
     const xmlParser = new XMLHttpRequest();
@@ -70,6 +75,7 @@ function showEdit(prod_id) {
     }
 }
 
+//function to edit product
 function editComputer(pro_id) {
 
     const comp_type = document.getElementById("ctype").value;
@@ -107,10 +113,7 @@ function editComputer(pro_id) {
 }
 
 
-//alert button
-
-
-//Add new 
+//function for adding new product
 function addProduct() {
     const comp_type = document.getElementById("c_comtype").value;
     const processor = document.getElementById("c_processor").value;
@@ -119,6 +122,7 @@ function addProduct() {
     const price = document.getElementById("c_pri").value;
 
     const xmlParser = new XMLHttpRequest();
+    const imgid =["313002","583839","158675","158648","1155173","154114","791027"]
     xmlParser.open("POST", `http://localhost:3000/Computer/`)
     xmlParser.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
     xmlParser.send(
@@ -129,7 +133,7 @@ function addProduct() {
                 RAM: ram,
                 monitor_size: mon_size,
                 price: price,
-                CompImage: "No link Provided"
+                CompImage: `${imgid[Number(Math.random()*6)]}`
 
             })
     )
@@ -141,6 +145,7 @@ function addProduct() {
     };
 }
 
+//function for deleting table data
 
 function deleteData(pro_id) {
     const xmlParser = new XMLHttpRequest();
@@ -170,7 +175,7 @@ const alert = (id, msg) => {
     wrapper.innerHTML = [
         `<div class="alert alert-danger alert-dismissible" role="alert">`,
         `<h3>${msg}</h3>`, `   <div><h3>${id}</h3></div>`,
-        `  <button type="button" class="btn btn-danger form-btn" data-bs-dismiss="alert" aria-label="Close" onclick="deleteData(${id})">Okey</button>`, `<button type="button" class="btn btn-danger form-btn" data-bs-dismiss="alert" aria-label="Close">Cancel</button>`,
+        `  <button type="button" class="btn btn-danger form-btn" data-bs-dismiss="alert" aria-label="Close" onclick="deleteData(${id})">Confirm</button>`, `<button type="button" class="btn btn-secondary form-btn" data-bs-dismiss="alert" aria-label="Close">Cancel</button>`,
         '</div>'
     ].join('')
 
@@ -179,27 +184,7 @@ const alert = (id, msg) => {
 
 
 //validations
-
-
-
-
-// $(document).ready(function(){
-//     const comp_type =document.getElementById("c_comtype").value;
-//     const processor = document.getElementById("c_processor").value;
-//     const ram =  document.getElementById("c_ram").value;
-//     const mon_size = document.getElementById("c_mon_size").value;
-//     const price = document.getElementById("c_pri").value;
-//     if(comp_type ==''|| processor==''||ram=='' || mon_size=='' || price==''){
-//         $('#ctype').addClass('is-invalid');
-//         console.log("hiiiii")
-
-//     }
-//     else{
-
-//         $('#ctype').removeClass('is-invalid');
-//     }
-
-// })
+//edit form validation
 
 $(document).ready(function () {
     $('#editForm').validate({
@@ -252,6 +237,8 @@ $(document).ready(function () {
     })
 })
 
+//create form validation
+
 $(document).ready(function () {
     $('#createForm').validate({
         rules: {
@@ -303,14 +290,19 @@ $(document).ready(function () {
     })
 })
 
-function getImage(img){
+
+//image generation using api
+
+function getImage(img,id){
     fetch(`https://pixabay.com/api/?key=36007746-b36ae27c3528436e0e7b2219a&id=${img}&image_type=photo&min_width=70&min_height=60`,{method:"GET"
     }).then(res => res.json())
     .then(image=>{
         console.log(image);
         const img = image.hits[0].largeImageURL
-        const bg = document.querySelector(".avatar");
+        const bg = document.querySelector('.avatar'+id+'');
         bg.style.backgroundImage=`url(${img})`;
     
     })
 }
+
+

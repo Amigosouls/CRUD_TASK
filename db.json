@@ -24,7 +24,7 @@
       "RAM": "64 GB",
       "monitor_size": "32 inches",
       "price": "$5,000",
-      "CompImage": "No link Provided",
+      "CompImage": "1999636",
       "id": 4
     },
     {
@@ -33,7 +33,7 @@
       "RAM": "16 GB",
       "monitor_size": "13 inches",
       "price": "$1,100",
-      "CompImage": "No link Provided",
+      "CompImage": "1483974",
       "id": 5
     },
     {
@@ -43,7 +43,7 @@
       "RAM": "32 GB",
       "monitor_size": "15.6 inches",
       "price": "$2,500",
-      "CompImage": "https://example.com/workstation-laptop.jpg"
+      "CompImage": "1867761"
     },
     {
       "id": 7,
@@ -52,7 +52,7 @@
       "RAM": "8 GB",
       "monitor_size": "23.8 inches",
       "price": "$800",
-      "CompImage": "https://example.com/all-in-one-pc.jpg"
+      "CompImage": "593673"
     },
     {
       "id": 8,
@@ -61,7 +61,7 @@
       "RAM": "16 GB",
       "monitor_size": "15.6 inches",
       "price": "$1,500",
-      "CompImage": "https://example.com/gaming-laptop.jpg"
+      "CompImage": "4795762"
     },
     {
       "computertype": "Laptop",
@@ -69,7 +69,7 @@
       "RAM": "4 gb",
       "monitor_size": "14 inch",
       "price": "$1000",
-      "CompImage": "No link Provided",
+      "CompImage": "154091",
       "id": 9
     }
   ]

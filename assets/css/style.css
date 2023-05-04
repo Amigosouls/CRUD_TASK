@@ -37,9 +37,34 @@ body{
   .error{
     color: red;
   }
-  .avatar{
-    height: 60px;
-    width: 70px;
+  .tdimg{
+    background-size: 30%;
     background-position: center;
-    background-size: contain;
+    background-repeat: no-repeat;
+    border-radius: 50%
   }
+
+  ion-icon {
+    font-size: 30px;
+    align-items: right;
+    text-align: right;
+  }
+
+  td{
+    color: floralwhite;
+    border: 2px beige;
+    font-size: large;
+    font-weight: 40px;
+  }
+.container-fluid >a{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: aqua;
+  font-style: italic;
+  font-size: 30px;
+  margin-left: 20px;
+}
+th{
+  font-size: 20px;
+  background-color: aquamarine;
+  color: chocolate;
+}
