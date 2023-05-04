@@ -33,3 +33,13 @@ body{
     margin: 10px;
     border: 2px solid blue;
   }
+
+  .error{
+    color: red;
+  }
+  .avatar{
+    height: 60px;
+    width: 70px;
+    background-position: center;
+    background-size: contain;
+  }

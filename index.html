@@ -5,7 +5,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CRUD PAGE</title>
+    <title>Bits and Bytes</title>
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/favicon/site.webmanifest">
+    <link rel="mask-icon" href="assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+
     <script src="https://code.jquery.com/jquery-3.6.4.js"
         integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"
@@ -34,8 +45,8 @@
     <nav class="navbar navbar-expand-lg bg-dark bg-transparent " data-bs-theme="dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
-                <img src="assets/img/logo.png" alt="Logo" width="80" height="40" class="d-inline-block align-text-top">
-                Dummy
+                <img src="assets/img/logo.jpg" alt="Logo" width="80" height="40" class="d-inline-block align-text-top">
+                Bits and Bytes
             </a>
             <div class="collapse navbar-collapse" id="navbarSupportedContent"></div>
             <ul class="navbar-nav  ms-auto align-self-end">
@@ -76,36 +87,80 @@
                     <h1 class="modal-title fs-5" id="mod_title2">Create</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
-                    <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="c_comtype" placeholder="Computer Type" value="">
-                        <label for="floatingPassword">Computer Type</label>
-                    </div>
-                    <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="c_processor" placeholder="Processor" value="">
-                        <label for="floatingInput">Processor</label>
-                    </div>
-                    <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="c_ram" placeholder="RAM" value="">
-                        <label for="floatingPassword">RAM</label>
-                    </div>
-                    <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="c_mon_size" placeholder="Monitor Size" value="">
-                        <label for="floatingInput">Monitor Size</label>
-                    </div>
-                    <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="c_pri" placeholder="Price" value="">
-                        <label for="floatingPassword">Price</label>
-                    </div>
+                <form name="createForm" id="createForm" action="get" class="was-validated">
+                    <div class="modal-body">
+                        <div class="form-floating  mb-2">
 
-                </div>
+                            <input type="text" class="form-control" placeholder="Specify Type" aria-label="Username"
+                                aria-describedby="footer-form" id='c_comtype' name="ctype" required>
+                            <label>Computer Type</label>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                            <div class="invalid-feedback">
+                                Oh! Thats certainly error
+                            </div>
+                        </div>
 
-                <div class="modal-footer">
+                        <div class="form-floating  mb-2">
 
-                    <button type="button" class="btn btn-primary" onclick="addProduct()"
-                        data-bs-dismiss="modal">Create</button>
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                </div>
+                            <input type="text" class="form-control" placeholder="Processor" aria-label="Username"
+                                aria-describedby="footer-form" id='c_processor' required>
+                            <label>Processor</label>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                            <div class="invalid-feedback">
+                                Oh! Thats certainly error
+                            </div>
+                        </div>
+                        <div class="form-floating  mb-2">
+
+                            <input type="text" class="form-control" placeholder="ex 2gb 4gb" aria-label="Username"
+                                aria-describedby="footer-form" id='c_ram' required>
+                            <label>RAM</label>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                            <div class="invalid-feedback">
+                                Oh! Thats certainly error
+                            </div>
+                        </div>
+
+                        <div class="form-floating  mb-2">
+
+                            <input type="text" class="form-control" placeholder="Ex: 14 inch" aria-label="Username"
+                                aria-describedby="footer-form" id='c_mon_size' required>
+                            <label>Monitor Size</label>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                            <div class="invalid-feedback">
+                                Oh! Thats certainly error
+                            </div>
+                        </div>
+                        <div class="form-floating  mb-2">
+
+                            <input type="text" class="form-control" placeholder="$ value" aria-label="Username"
+                                aria-describedby="footer-form" id='c_pri' required>
+                            <label>Price</label>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                            <div class="invalid-feedback">
+                                Oh! Thats certainly error
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+
+
+                        <button type="button" class="btn btn-primary" onclick="addProduct()"
+                            data-bs-dismiss="modal">Create</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
@@ -120,37 +175,80 @@
                         <h1 class="modal-title fs-5" id="mod_title">Edit</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <div class="modal-body">
-                        <input type="text" disabled="true" hidden="true" id="pro_id">
-                        <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="ctype" name="ctype" placeholder="Computer Type">
-                            <label for="floatingPassword">Computer Type</label>
-                        </div>
-                        <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="processor" name = "processor" placeholder="Processor">
-                            <label for="floatingInput">Processor</label>
-                        </div>
-                        <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="ram" placeholder="RAM">
-                            <label for="floatingPassword">RAM</label>
-                        </div>
-                        <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="mon_size" placeholder="Monitor Size">
-                            <label for="floatingInput">Monitor Size</label>
-                        </div>
-                        <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="pri" placeholder="Price">
-                            <label for="floatingPassword">Price</label>
-                        </div>
+                    <form name="editForm" id="editForm" action="get" class="was-validated">
+                        <div class="modal-body">
+                            <input type="text" id="pro_id" hidden="true">
+                            <div class="form-floating  mb-2">
 
-                    </div>
+                                <input type="text" class="form-control" placeholder="Specify Type" aria-label="Username"
+                                    id='ctype' name="ctype" required minlength="5" maxlength="12">
+                                <label>Computer Type</label>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                                <div class="invalid-feedback">
+                                    Oh! Thats certainly error
+                                </div>
+                            </div>
 
-                    <div class="modal-footer">
+                            <div class="form-floating  mb-2">
 
-                        <button type="button" class="btn btn-primary" onclick="editComputer(pro_id.value)"
-                            data-bs-dismiss="modal" id="liveAlertBtn">Edit</button>
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    </div>
+                                <input type="text" class="form-control" placeholder="Processor" aria-label="Username"
+                                    id='processor' name="processor" required>
+                                <label>Processor</label>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                                <div class="invalid-feedback">
+                                    Oh! Thats certainly error
+                                </div>
+                            </div>
+                            <div class="form-floating  mb-2">
+
+                                <input type="text" class="form-control" placeholder="ex 2gb 4gb" aria-label="Username"
+                                    aria-describedby="footer-form" id='ram' name="ram" required>
+                                <label>RAM</label>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                                <div class="invalid-feedback">
+                                    Oh! Thats certainly error
+                                </div>
+                            </div>
+
+                            <div class="form-floating  mb-2">
+
+                                <input type="text" class="form-control" placeholder="Ex: 14 inch" aria-label="Username"
+                                    aria-describedby="footer-form" id='mon_size' name="mon_size" required>
+                                <label>Monitor Size</label>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                                <div class="invalid-feedback">
+                                    Oh! Thats certainly error
+                                </div>
+                            </div>
+                            <div class="form-floating  mb-2">
+
+                                <input type="text" class="form-control" placeholder="$ value" aria-label="Username"
+                                    aria-describedby="footer-form" id='pri' name="pri" required>
+                                <label>Price</label>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                                <div class="invalid-feedback">
+                                    Oh! Thats certainly error
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="modal-footer">
+
+                            <button type="submit" class="btn btn-primary" onclick="editComputer(pro_id.value)"
+                                data-bs-dismiss="modal" id="liveAlertBtn">Edit</button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>

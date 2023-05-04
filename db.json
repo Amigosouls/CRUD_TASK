@@ -1,12 +1,12 @@
 {
   "Computer": [
     {
-      "computertype": "Laptop",
-      "processor": "Intel Core i5",
+      "computertype": "xxqx",
+      "processor": "rgrege",
       "RAM": "4 GB",
       "monitor_size": "13 inches",
-      "price": "$900",
-      "CompImage": "ed6a9364a9fd0a76647.jpg",
+      "price": "",
+      "CompImage": "1868496",
       "id": 1
     },
     {
@@ -15,7 +15,7 @@
       "RAM": "32 GB",
       "monitor_size": "31 inche",
       "price": "$3,000",
-      "CompImage": "No link Provided",
+      "CompImage": "606761",
       "id": 2
     },
     {
@@ -24,7 +24,7 @@
       "RAM": "4 GB",
       "monitor_size": "21.7 inches",
       "price": "$4500",
-      "CompImage": "No link Provided",
+      "CompImage": "459196",
       "id": 3
     },
     {
