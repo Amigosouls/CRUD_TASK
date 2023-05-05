@@ -44,12 +44,16 @@ function showTable() {
                     '<td class="avatar'+imgcount+' tdimg"></td>';
                     getImage(values["CompImage"],imgcount);
                 data += '<td> <button type="button" class="btn btn-warning"  data-bs-toggle="modal" data-bs-target="#editModel" onClick="showEdit(' + values["id"] + ')"><ion-icon name="create-outline"></ion-icon></button>';
-                data += `<td> <button type="button" class="btn btn-danger" onClick="alert(${values["id"]},'You are deleting the product with ID')"><ion-icon name="trash-outline"></ion-icon></button>`;
+                data += `<td> <button type="button" class="btn btn-danger" onClick="delalert(${values["id"]},'You are deleting the product with ID')"><ion-icon name="trash-outline"></ion-icon></button>`;
                 data += "</td>"
                 imgcount+=1
             }
             console.log(data);
             document.getElementById("tabledata").innerHTML = data;
+        }
+        else{
+            var element = document.getElementById('tabledata');
+            element.innerText="Loading....."
         }
     }
 }
@@ -105,7 +109,7 @@ function editComputer(pro_id) {
         if (this.readyState == 4 && this.status == 200) {
             const objects = JSON.parse(this.responseText);
 
-            showTable();
+            editAlert(pro_id,'You have Edited the Product with ID')
         }
     }
 
@@ -170,12 +174,25 @@ function deleteData(pro_id) {
 //alerts
 const alertPlaceholder = document.getElementById('liveAlertPlaceholder')
 
-const alert = (id, msg) => {
+const delalert = (id, msg) => {
     const wrapper = document.createElement('div')
     wrapper.innerHTML = [
         `<div class="alert alert-danger alert-dismissible" role="alert">`,
         `<h3>${msg}</h3>`, `   <div><h3>${id}</h3></div>`,
         `  <button type="button" class="btn btn-danger form-btn" data-bs-dismiss="alert" aria-label="Close" onclick="deleteData(${id})">Confirm</button>`, `<button type="button" class="btn btn-secondary form-btn" data-bs-dismiss="alert" aria-label="Close">Cancel</button>`,
+        '</div>'
+    ].join('')
+
+    alertPlaceholder.append(wrapper)
+}
+
+
+const editAlert = (id, msg) => {
+    const wrapper = document.createElement('div')
+    wrapper.innerHTML = [
+        `<div class="alert alert-danger alert-dismissible" role="alert">`,
+        `<h3>${msg}</h3>`, `   <div><h3>${id}</h3></div>`,
+        `  <button type="button" class="btn btn-danger form-btn" data-bs-dismiss="alert" aria-label="Close" onclick="showTable()">Confirm</button>`, `<button type="button" class="btn btn-secondary form-btn" data-bs-dismiss="alert" onclick="showTable()" aria-label="Close">Cancel</button>`,
         '</div>'
     ].join('')
 

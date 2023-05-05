@@ -52,7 +52,7 @@ body{
   }
 
   td{
-    color: rgb(247, 0, 0);
+    color: rgb(255, 255, 255);
     border: 2px rgb(105, 105, 33);
     font-size: 25px;
     font-weight: 300px;
@@ -80,12 +80,12 @@ th{
 
 @font-face {
   font-family: pageFont;
-  src: url(../css/CabinSketch-Bold.ttf);
+  src: url(../css/Aclonica-Regular.ttf);
 }
 
 @font-face {
   font-family: tdfont;
-  src: url(../css/Aclonica-Regular.ttf);
+  src: url(../css/Belgrano-Regular.ttf);
 }
 
 .modal h1{
