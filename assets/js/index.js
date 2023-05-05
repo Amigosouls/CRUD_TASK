@@ -83,9 +83,8 @@ function editComputer(pro_id) {
     const ram = document.getElementById("ram").value;
     const mon_size = document.getElementById("mon_size").value;
     const price = document.getElementById("pri").value;
-
+    const imgid =["313002","583839","158675","158648","1155173","154114","791027"]
     const xmlParser = new XMLHttpRequest();
-    const timer = setTimeout(JSON.stringify, 3000);
 
     xmlParser.open("PUT", `http://localhost:3000/Computer/${pro_id}`)
     xmlParser.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
@@ -98,7 +97,7 @@ function editComputer(pro_id) {
                 RAM: ram,
                 monitor_size: mon_size,
                 price: price,
-                CompImage: "No link Provided"
+                CompImage: ''+imgid[parseInt(Math.random()*6)]+''
 
             })
     )
@@ -133,9 +132,10 @@ function addProduct() {
                 RAM: ram,
                 monitor_size: mon_size,
                 price: price,
-                CompImage: `${imgid[Number(Math.random()*6)]}`
+                CompImage:''+imgid[parseInt(Math.random()*6)]+''
 
             })
+
     )
     xmlParser.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {

@@ -21,10 +21,10 @@
     {
       "computertype": "Gaming",
       "processor": "AMD Ryzen 9 5950X",
-      "RAM": "64 GB",
+      "RAM": "16 GB",
       "monitor_size": "32 inches",
       "price": "$5,000",
-      "CompImage": "1999636",
+      "CompImage": "158648",
       "id": 4
     },
     {
@@ -71,6 +71,15 @@
       "price": "$1000",
       "CompImage": "154091",
       "id": 9
+    },
+    {
+      "computertype": "Gaming PC",
+      "processor": "AMD Radeon A3",
+      "RAM": "8 GB",
+      "monitor_size": "14 inch",
+      "price": "$8000",
+      "CompImage": "313002",
+      "id": 10
     }
   ]
 }
