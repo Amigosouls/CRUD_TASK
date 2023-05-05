@@ -1,24 +1,4 @@
 
-(function () {
-    'use strict'
-
-    // Fetch all the forms we want to apply custom Bootstrap validation styles to
-    var forms = document.querySelectorAll('.needs-validation')
-
-    // Loop over them and prevent submission
-    Array.prototype.slice.call(forms)
-        .forEach(function (form) {
-            form.addEventListener('submit', function (event) {
-                if (!form.checkValidity()) {
-                    event.preventDefault()
-                    event.stopPropagation()
-                }
-
-                form.classList.add('was-validated')
-            }, false)
-        })
-})()
-
 //funcion to show data to the table
 function showTable() {
     const xmlParser = new XMLHttpRequest();
@@ -43,7 +23,7 @@ function showTable() {
                 data +=
                     '<td class="avatar'+imgcount+' tdimg"></td>';
                     getImage(values["CompImage"],imgcount);
-                data += '<td> <button type="button" class="btn btn-warning"  data-bs-toggle="modal" data-bs-target="#editModel" onClick="showEdit(' + values["id"] + ')"><ion-icon name="create-outline"></ion-icon></button>';
+                data += '<td> <button type="button" class="btn btn-warning" id="editBtn" data-bs-toggle="modal" data-bs-target="#editModel" onClick="showEdit(' + values["id"] + ')"><ion-icon name="create-outline"></ion-icon></button>';
                 data += `<td> <button type="button" class="btn btn-danger" onClick="delalert(${values["id"]},'You are deleting the product with ID')"><ion-icon name="trash-outline"></ion-icon></button>`;
                 data += "</td>"
                 imgcount+=1
@@ -107,7 +87,6 @@ function editComputer(pro_id) {
     )
     xmlParser.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-            const objects = JSON.parse(this.responseText);
 
             editAlert(pro_id,'You have Edited the Product with ID')
         }
@@ -164,14 +143,13 @@ function deleteData(pro_id) {
     )
     xmlParser.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-            const products = JSON.parse(this.responseText);
-        }
-        showTable();
-    };
+            showTable();
+        } 
+     };
 }
 
 
-//alerts
+//custom alert for delete
 const alertPlaceholder = document.getElementById('liveAlertPlaceholder')
 
 const delalert = (id, msg) => {
@@ -186,6 +164,7 @@ const delalert = (id, msg) => {
     alertPlaceholder.append(wrapper)
 }
 
+//custom alert for edits
 
 const editAlert = (id, msg) => {
     const wrapper = document.createElement('div')
@@ -199,123 +178,13 @@ const editAlert = (id, msg) => {
     alertPlaceholder.append(wrapper)
 }
 
-
-//validations
-//edit form validation
-
-$(document).ready(function () {
-    $('#editForm').validate({
-        rules: {
-            ctype: {
-                required: true,
-                minlength: 5,
-                maxlength: 12
-            },
-            processor: {
-                required: true,
-
-            },
-            ram: {
-                required: true,
-                minlength: 10,
-                maxlength: 10
-            },
-            mon_size: {
-                required: true,
-            },
-            pri: {
-                required: true,
-                pattern: /^[0-9]+$/
-            }
-        },
-        messages: {
-            uname: {
-                required: " Required",
-                minlength: "It should be minimum of 5 characters",
-                maxlength: "It should contain 12 characters only",
-            },
-            processor: {
-                required: " Required",
-
-            },
-            ram: {
-                required: " Required",
-                minlength: "It should contain 10 digits",
-                maxlength: "It should contain 10 digits"
-            },
-            mon_size: {
-                required: " Required",
-            },
-            pri: {
-                required: "This is a required field",
-                pattern: "Pattern doesn't match"
-            }
-        }
-    })
-})
-
-//create form validation
-
-$(document).ready(function () {
-    $('#createForm').validate({
-        rules: {
-            c_comtype: {
-                required: true,
-                minlength: 5,
-                maxlength: 12
-            },
-            c_processor: {
-                required: true,
-
-            },
-            c_ram: {
-                required: true,
-                minlength: 10,
-                maxlength: 10
-            },
-            c_mon_size: {
-                required: true,
-            },
-            c_pri: {
-                required: true,
-                pattern: /^[0-9]+$/
-            }
-        },
-        messages: {
-            c_comtype: {
-                required: " Required",
-                minlength: "It should be minimum of 5 characters",
-                maxlength: "It should contain 12 characters only",
-            },
-            c_processor: {
-                required: " Required",
-
-            },
-            c_ram: {
-                required: " Required",
-                minlength: "It should contain 10 digits",
-                maxlength: "It should contain 10 digits"
-            },
-            c_mon_size: {
-                required: " Required",
-            },
-            c_pri: {
-                required: "This is a required field",
-                pattern: "Pattern doesn't match"
-            }
-        }
-    })
-})
-
-
 //image generation using api
 
 function getImage(img,id){
-    fetch(`https://pixabay.com/api/?key=36007746-b36ae27c3528436e0e7b2219a&id=${img}&image_type=photo&min_width=70&min_height=60`,{method:"GET"
+    fetch(`https://pixabay.com/api/?key=36007746-b36ae27c3528436e0e7b2219a&id=${img}&image_type=photo&min_width=40&min_height=60`,{method:"GET"  //api link from pixaby
     }).then(res => res.json())
     .then(image=>{
-        console.log(image);
-        const img = image.hits[0].largeImageURL
+        const img = image.hits[0].largeImageURL //target the key hits from the json response object 
         const bg = document.querySelector('.avatar'+id+'');
         bg.style.backgroundImage=`url(${img})`;
     

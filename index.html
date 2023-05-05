@@ -44,13 +44,15 @@
 
     <!--Navbar-->
 
-    <nav class="navbar navbar-expand-lg bg-dark bg-transparent " data-bs-theme="dark">
+    <nav class="navbar  navbar-expand-lg bg-dark bg-transparent " data-bs-theme="dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
                 <img src="assets/img/logo.jpg" alt="Logo" width="80" height="40" class="d-inline-block align-text-top">
                 Bits and Bytes
+                <h3>Computers</h3>
             </a>
             <div class="collapse navbar-collapse" id="navbarSupportedContent"></div>
+            <!-- Create Button -->
             <ul class="navbar-nav  ms-auto align-self-end">
                 <button type="button" class="btn btn-success" data-bs-toggle="modal"
                     data-bs-target="#createModel">Create</button>
@@ -90,7 +92,7 @@
                     <h3 class="modal-title fs-5" id="mod_title2">Add Product</h3>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <form name="createForm" id="createForm" action="get" class="was-validated">
+                <form name="createForm" id="createForm" action="get" class="was-validated needs-validation">
                     <div class="modal-body">
                         <div class="form-floating  mb-2">
 
@@ -133,7 +135,7 @@
                         <div class="form-floating  mb-2">
 
                             <input type="" class="form-control" placeholder="Ex: 14 inch" aria-label="Username"
-                                aria-describedby="footer-form" id='c_mon_size' required>
+                                aria-describedby="footer-form" id='c_mon_size' required pattern="([0-9])+(\.?[0-9])+ inches$">
                             <label>Monitor Size</label>
                             <div class="valid-feedback">
                                 Looks good!
@@ -145,7 +147,7 @@
                         <div class="form-floating  mb-2">
 
                             <input type="text" class="form-control" placeholder="$ value" aria-label="Username"
-                                aria-describedby="footer-form" id='c_pri' required>
+                                aria-describedby="footer-form" id='c_pri' required pattern="(\$[0-9]+(\.[0-9]+)?)">
                             <label>Price</label>
                             <div class="valid-feedback">
                                 Looks good!
@@ -179,7 +181,7 @@
                         <h3 class="modal-title fs-5" id="mod_title">Edit Product</h3> 
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <form name="editForm" id="editForm" action="get" class="was-validated">
+                    <form name="editForm" id="editForm" action="" class="was-validated needs-validation" novalidate onsubmit="editComputer(pro_id.value)">
                         <div class="modal-body">
                             <input type="text" id="pro_id" hidden="true">
                             <div class="form-floating  mb-2">
@@ -213,7 +215,7 @@
                                         <option value="AMD Ryzen 3">AMD Ryzen 3</option>
                                         <option value="AMD Ryzen 5">AMD Ryzen 5</option>
                                         <option value="AMD Ryzen 7">AMD Ryzen 7</option>
-                                        <option value="AMD A4">AMD A4/option>
+                                        <option value="AMD A4">AMD A4</option>
                                         <option value="Intel Celereon">Intel Celereon</option>
                                     </select>
                                 <label>Processor</label>
@@ -246,7 +248,7 @@
                             <div class="form-floating  mb-2">
 
                                 <input type="text" class="form-control" placeholder="Ex: 14 inch" aria-label="Username"
-                                    aria-describedby="footer-form" id='mon_size' name="mon_size" required>
+                                    aria-describedby="footer-form" id='mon_size' name="mon_size" required pattern="([0-9])+(\.?[0-9])+ inches$">
                                 <label>Monitor Size</label>
                                 <div class="valid-feedback">
                                     Looks good!
@@ -258,20 +260,20 @@
                             <div class="form-floating  mb-2">
 
                                 <input type="text" class="form-control" placeholder="$ value" aria-label="Username"
-                                    aria-describedby="footer-form" id='pri' name="pri" required>
+                                    aria-describedby="footer-form" id='pri' name="pri" required pattern="(\$[0-9]+(\.[0-9]+)?)">
                                 <label>Price</label>
                                 <div class="valid-feedback">
                                     Looks good!
                                 </div>
                                 <div class="invalid-feedback">
-                                    Oh! Thats certainly error
+                                    Error! Required format ex: $4000
                                 </div>
                             </div>
 
                         </div>
                         <div class="modal-footer">
 
-                            <button type="submit" class="btn btn-primary" onclick="editComputer(pro_id.value)"
+                            <button type="submit" class="btn btn-primary" 
                                 data-bs-dismiss="modal" id="liveAlertBtn">Edit</button>
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                         </div>

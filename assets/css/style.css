@@ -1,80 +1,101 @@
-body{
-    background-image: url(../img/crud-bg.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position:center;
+body {
+  background-image: url(../img/crud-bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
-.box{
-    margin: 30px;
-    justify-content: center;
-    align-items: center;
-    
+.box {
+  margin: 30px;
+  justify-content: center;
+  align-items: center;
+
 }
+
 .modal {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: auto;
-    display: inline-flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 1.6rem 3rem;
-    background: #3a606a;
-    height: 600px;
-    width: 500px;
-    box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.2);
-  }
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: auto;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.6rem 3rem;
+  background: #3a606a;
+  height: 600px;
+  width: 500px;
+  box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.2);
+}
 
-  .form-btn{
-    margin: 10px;
-    border: 2px solid blue;
-  }
+.form-btn {
+  margin: 10px;
+  border: 2px solid blue;
+}
 
-  .error{
-    color: red;
-  }
-  .tdimg{
-    background-size: 50%;
-    background-position: center;
-    background-repeat: no-repeat;
-    border-radius: 50%;
-    justify-content:start;
-  }
+.error {
+  color: red;
+}
 
-  ion-icon {
-    font-size: 30px;
-    align-items: right;
-    text-align: right;
-  }
+.tdimg {
+  background-size: 40%;
+  background-position: left;
+  background-repeat: no-repeat;
+}
 
-  td{
-    color: rgb(255, 255, 255);
-    border: 2px rgb(105, 105, 33);
-    font-size: 15px;
-    font-weight: 300px;
-    font-style: normal;
-    font-family: tdfont;
-  }
-.container-fluid >a{
-  font-family:pageFont;
+ion-icon {
+  font-size: 30px;
+  align-items: right;
+  text-align: right;
+}
+
+td {
+  color: rgb(255, 255, 255);
+  border: 2px rgb(105, 105, 33);
+  font-size: 15px;
+  font-weight: 300px;
+  font-style: normal;
+  font-family: tdfont;
+  margin: 30px;
+}
+
+.container-fluid>a {
+  font-family: pageFont;
   color: aqua;
   font-style: italic;
   font-size: 40px;
   margin-left: 20px;
+  text-decoration: none;
 }
-th{
+.container-fluid>a:hover{
+  color: aqua;
+}
+
+.container-fluid a >h3 {
+  font-family: pageFont;
+  color:aqua;
+  font-style: italic;
+  font-size: 30px;
+  margin-left: 120px;
+}
+
+
+tr {
+  margin: 30px !important;
+
+}
+
+th {
   font-size: 30px;
   background-color: aquamarine;
   color: rgb(201, 201, 206);
   font-size: medium;
 }
 
-.table{
+.table {
   border: 3px solid rgb(7, 41, 233);
   table-layout: fixed;
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 @font-face {
@@ -87,7 +108,7 @@ th{
   src: url(../css/Belgrano-Regular.ttf);
 }
 
-.modal h1{
+.modal h1 {
   font-family: tdfont;
   text-align: center;
   font-size: 30px !important;
@@ -95,21 +116,30 @@ th{
   background-color: #3c99dc;
 }
 
-.modal h3{
+.modal h3 {
   font-family: tdfont;
   font-size: 25px !important;
   color: rgb(229, 233, 0);
   font-weight: 600;
 }
-.modal-header{
+
+.modal-header {
   background-color: #3c99dc;
   font-family: tdfont;
-  border-top-left-radius:0px !important;
-  border-top-right-radius:0px !important;
+  border-top-left-radius: 0px !important;
+  border-top-right-radius: 0px !important;
 }
-.modal-body{
+
+.modal-body {
   background-color: #66d3fa;
 }
-.modal-footer{
+
+.modal-footer {
   background-color: #2565ae;
+}
+
+tr:hover{
+  background-color: rgb(37, 36, 36);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
 }

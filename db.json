@@ -5,17 +5,17 @@
       "processor": "AMD Ryzen 9 5900X",
       "RAM": "32 GB",
       "monitor_size": "31 inches",
-      "price": "$3,000",
-      "CompImage": "158648",
+      "price": "$4500",
+      "CompImage": "1155173",
       "id": 2
     },
     {
-      "computertype": "Desktop",
+      "computertype": "Gaming PC",
       "processor": "Intel Core i3",
       "RAM": "16 GB",
       "monitor_size": "21.5 inches",
       "price": "$4500",
-      "CompImage": "313002",
+      "CompImage": "158675",
       "id": 3
     },
     {
@@ -23,8 +23,8 @@
       "processor": "AMD Ryzen 9 5950X",
       "RAM": "16 GB",
       "monitor_size": "32 inches",
-      "price": "$5,000",
-      "CompImage": "158648",
+      "price": "$4500",
+      "CompImage": "1155173",
       "id": 4
     },
     {
@@ -32,7 +32,7 @@
       "processor": "Intel Core i5",
       "RAM": "16 GB",
       "monitor_size": "13 inches",
-      "price": "$1,100",
+      "price": "$1100",
       "CompImage": "1483974",
       "id": 5
     },
@@ -42,7 +42,7 @@
       "processor": "Intel Xeon E-2286M",
       "RAM": "32 GB",
       "monitor_size": "15.6 inches",
-      "price": "$2,500",
+      "price": "$2500",
       "CompImage": "1867761"
     },
     {
@@ -60,7 +60,7 @@
       "processor": "AMD Ryzen 7",
       "RAM": "16 GB",
       "monitor_size": "15.6 inches",
-      "price": "$1,500",
+      "price": "$1500",
       "CompImage": "4795762"
     },
     {
@@ -76,18 +76,18 @@
       "computertype": "Gaming PC",
       "processor": "AMD Radeon A3",
       "RAM": "8 GB",
-      "monitor_size": "14 inch",
+      "monitor_size": "14 inches",
       "price": "$8000",
-      "CompImage": "313002",
+      "CompImage": "158648",
       "id": 10
     },
     {
-      "computertype": "Laptop",
+      "computertype": "Gaming PC",
       "processor": "AMD A4",
       "RAM": "4 gb",
-      "monitor_size": "14 inch",
+      "monitor_size": "14 inches",
       "price": "$1000",
-      "CompImage": "158675",
+      "CompImage": "583839",
       "id": 11
     }
   ]
